@@ -1,0 +1,93 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+  <div class="box">
+    <form [formGroup]="product" (ngSubmit)="postProduct()">
+      <div class="form-group">
+        <h2>Add Product</h2>
+
+        <label for="Name">Name</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter name"
+          formControlName="name"
+        />
+        <span
+          *ngIf="
+            product.controls['name'].invalid &&
+            (product.controls['name'].dirty || product.controls['name'].touched)
+          "
+          class="alert"
+          >Name is required</span
+        >
+        <br />
+      </div>
+      <div class="form-group">
+        <label for="Name">Type</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter Type"
+          formControlName="type"
+        />
+        <span
+          *ngIf="
+            product.controls['type'].invalid &&
+            (product.controls['type'].dirty || product.controls['type'].touched)
+          "
+          class="alert"
+          >Type is required</span
+        >
+        <br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Cost</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter Cost"
+          formControlName="perHourCost"
+        />
+        <span
+          *ngIf="
+            product.controls['perHourCost'].invalid &&
+            (product.controls['perHourCost'].dirty ||
+              product.controls['perHourCost'].touched)
+          "
+          class="alert"
+          >Cost is required</span
+        >
+        <br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Image Path</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          placeholder="Start With ../../assets/bikes/"
+          formControlName="imagePath"
+        /><br />
+        <span
+          *ngIf="
+            product.controls['imagePath'].invalid &&
+            (product.controls['imagePath'].dirty ||
+              product.controls['imagePath'].touched)
+          "
+          class="alert"
+          >Image Path is required</span
+        >
+        <br />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

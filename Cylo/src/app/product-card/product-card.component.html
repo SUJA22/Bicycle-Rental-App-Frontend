@@ -1,0 +1,28 @@
+<div class="card" style="width: 18rem">
+  <img
+    class="card-img-top"
+    src="{{ imagePath }}"
+    alt="Card image cap"
+    width="350"
+    height="250"
+  />
+  <div class="card-body">
+    <h2 class="card-title">{{ name }}</h2>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Type: {{ type }}</li>
+    <li class="list-group-item">Price: {{ cost }}/Hour</li>
+  </ul>
+  <div class="card-body">
+    <button
+      [routerLink]="['/confirmOrder', userId, name]"
+      class="btn btn-primary"
+    >
+      Book Now
+    </button>
+  </div>
+</div>

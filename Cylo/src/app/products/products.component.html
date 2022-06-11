@@ -1,0 +1,12 @@
+<div class="d-flex flex-row justify-content-start flex-wrap align-items">
+  <div *ngFor="let product of productList">
+    <div class="col-sm-6 m-4">
+      <app-product-card
+        imagePath="{{ product.imagePath }}"
+        name="{{ product.name }}"
+        type="{{ product.type }}"
+        cost="{{ product.perHourCost }}"
+      ></app-product-card>
+    </div>
+  </div>
+</div>

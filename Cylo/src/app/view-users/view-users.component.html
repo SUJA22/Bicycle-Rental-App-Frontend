@@ -1,0 +1,21 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="tableContainer mx-auto">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userlist">
+        <th scope="row">{{ user.id }}</th>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.contact }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,42 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="d-flex flex-row justify-content-start flex-wrap align-items">
+  <div *ngFor="let product of productList">
+    <div class="col-sm-6 m-4">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="{{ product.imagePath }}"
+          alt="Card image cap"
+          width="350"
+          height="250"
+        />
+        <div class="card-body">
+          <h2 class="card-title">{{ product.name }}</h2>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ product.type }}</li>
+          <li class="list-group-item">{{ product.perHourCost }}/Hour</li>
+        </ul>
+        <div class="d-flex justify-content-around card-body">
+          <button
+            [routerLink]="['/updateProduct', product.id]"
+            class="btn btn-primary"
+          >
+            Update
+          </button>
+          <button
+            type="submit"
+            class="btn btn-danger"
+            (click)="confirmDelete(product.id)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="box">
+    <form [formGroup]="adminLoginForm" (ngSubmit)="addAdmin()">
+      <div class="form-group">
+        <h2>Login</h2>
+        <h3>
+          Don't have an account?
+          <a [routerLink]="['/adminRegister']">Register</a>
+        </h3>
+        <label for="exampleInputEmail1">Username</label>
+        <input
+          type="email"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter Username"
+          formControlName="username"
+        />
+        <span *ngIf="e?.touched && e?.invalid" class="alert">
+          <span *ngIf="e?.errors?.['required']">Username is required</span>
+        </span>
+        <br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+          formControlName="password"
+        /><br />
+        <span *ngIf="p?.touched && p?.invalid" class="alert">
+          <span *ngIf="p?.errors?.['required']">Password is required</span>
+          <span *ngIf="p?.errors?.['pattern']"
+            >Password should be at between 8 - 15 characters long and should
+            contain one number,one upper and lower case character and one
+            special character</span
+          >
+        </span>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

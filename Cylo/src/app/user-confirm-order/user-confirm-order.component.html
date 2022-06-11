@@ -1,0 +1,49 @@
+<app-app-navbar></app-app-navbar>
+<div class="container">
+  <div class="box">
+    <form [formGroup]="orderForm" (ngSubmit)="postOrder()">
+      <div class="form-group">
+        <h2>Enter Details</h2>
+        <label for="exampleInputEmail1">Enter address</label>
+        <input
+          type="email"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter address"
+          formControlName="address"
+        />
+        <span *ngIf="a?.touched && a?.invalid" class="alert">
+          <span *ngIf="a?.errors?.['required']">Address is required</span>
+        </span>
+        <br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Start Date</label>
+        <input
+          type="date"
+          class="form-control"
+          placeholder="Password"
+          formControlName="startDate"
+        /><br />
+        <span *ngIf="s?.touched && s?.invalid" class="alert">
+          <span *ngIf="s?.errors?.['required']">Start Date is required</span>
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">End Date</label>
+        <input
+          type="date"
+          class="form-control"
+          placeholder="Password"
+          formControlName="endDate"
+        /><br />
+        <span *ngIf="e?.touched && e?.invalid" class="alert">
+          <span *ngIf="e?.errors?.['required']">End Date is required</span>
+        </span>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
