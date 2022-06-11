@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   //baseUrl:"https://6283ac9f92a6a5e462278a7a.mockapi.io/"
-  baseUrl:"https://localhost:5001/api/"
+  //baseUrl:"https://localhost:5001/api/"
+  baseUrl:"http://52.11.140.19/api/"
 };
 
 /*
